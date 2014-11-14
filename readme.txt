@@ -75,10 +75,17 @@ No screenshots yet. Sorry :/
 
 == Upgrade Notice ==
 
+= 0.2.1 =
+Fixed a bug where "\n" appears on top of your page when using HTML links.
+
 = 0.2.0 =
 You can now configure if you want GWFO to be embedded using <link rel="stylesheet" or use the Web font loader javascript (written and recommended by Google, Adobe and Typekit).
 
 == Changelog ==
+
+= 0.2.1 Bugfix for link html =
+
+Fixed a bug where "\n" appears on top of your page when using HTML links.
 
 = 0.2.0 First release =
 

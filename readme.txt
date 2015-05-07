@@ -75,6 +75,9 @@ No screenshots yet. Sorry :/
 
 == Upgrade Notice ==
 
+= 0.2.2 =
+Fixed a bug where invalid Google Fonts links with empty font name will be ignored.
+
 = 0.2.1 =
 Fixed a bug where "\n" appears on top of your page when using HTML links.
 
@@ -82,6 +85,10 @@ Fixed a bug where "\n" appears on top of your page when using HTML links.
 You can now configure if you want GWFO to be embedded using <link rel="stylesheet" or use the Web font loader javascript (written and recommended by Google, Adobe and Typekit).
 
 == Changelog ==
+
+= 0.2.2 Bugfix for empty google font links =
+
+Fixed a bug where invalid Google Fonts links with empty font name will be ignored.
 
 = 0.2.1 Bugfix for link html =
 

@@ -3,13 +3,13 @@
  * Plugin Name: Google Webfont Optimizer
  * Plugin URI: http://quickfalcon.com/
  * Description: This plugin optimizes the way Google Fonts loads on your webpage, increasing your website's performance.
- * Version: 0.2.1
+ * Version: 0.2.4
  * Author: Sigurdur Gudbrandsson
  * Author URI: http://quickfalcon.com/
  * License: GPL2
  */
 
-/*  Copyright 2014 Quick Falcon  (email : siggy@quickfalcon.com)
+/*  Copyright 2015 Quick Falcon  (email : siggy@quickfalcon.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -29,7 +29,7 @@
 require dirname( __FILE__ ) . '/scb/load.php';
 
 class GWFO {
-    const version = '0.2.1';
+    const version = '0.2.4';
     protected static $_instance;
 
     // Class Construct
@@ -101,7 +101,9 @@ class GWFO {
                             }
                         }
 
-                        $returnFonts['google'][] = $fontFamily[0] . ":" . $fontFamily[1] . ":" . $subset;
+                        
+                        if (strlen($fontFamily[0]) > 0)
+                            $returnFonts['google'][] = $fontFamily[0] . ":" . $fontFamily[1] . ":" . $subset;
                     }
                 }
 /*
@@ -188,8 +190,10 @@ class GWFO {
 
             $script = '<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=' . urlencode($googleFamilies) . '">';
 
-            foreach ($fontList['other']['url'] as $otherfontlink) {
-                $script .= '<link rel="stylesheet" href="' . $otherfontlink . '">';
+            if (is_array($fontList['other']['url'])) {
+                foreach ($fontList['other']['url'] as $otherfontlink) {
+                    $script .= '<link rel="stylesheet" href="' . $otherfontlink . '">';
+                }
             }
         } else {
 
@@ -232,7 +236,7 @@ class GWFO {
 
             # Minor fix for DOMDocument "fixes"
             $fontLink = str_ireplace("&#038;", "&", $fontLink);
-            $fontLink = str_ireplace("&", "(&|&#038;)", $fontLink);
+            $fontLink = str_ireplace("&", "(&|&#038;|&amp;)", $fontLink);
 
             $pattern = "/<link[^>]*" . $fontLink . "[^>]*>/";
             $modifiedContent = preg_replace($pattern, "", $modifiedContent);

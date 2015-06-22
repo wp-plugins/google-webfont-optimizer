@@ -3,7 +3,7 @@ Contributors: sigurdurg
 Donate link: http://quickfalcon.com/
 Tags: plugin, bandwidth, javascript, optimize, performance, cascading style sheet, google, google page speed, google rank, js, css, optimizer, speed, user experience, web performance optimization
 Requires at least: 3.0.1
-Tested up to: 4.0
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -71,9 +71,16 @@ If Google Fonts API is listed, your website uses Google Fonts and you should use
 
 == Screenshots ==
 
-No screenshots yet. Sorry :/
+1. Admin menu
+2. Before and After Font Optimizing
 
 == Upgrade Notice ==
+
+= 0.2.4 =
+Fixed a bug where fonts weren't being removed when &amp; is included.
+
+= 0.2.3 =
+Fixed a PHP warning bug.
 
 = 0.2.2 =
 Fixed a bug where invalid Google Fonts links with empty font name will be ignored.
@@ -85,6 +92,15 @@ Fixed a bug where "\n" appears on top of your page when using HTML links.
 You can now configure if you want GWFO to be embedded using <link rel="stylesheet" or use the Web font loader javascript (written and recommended by Google, Adobe and Typekit).
 
 == Changelog ==
+
+= 0.2.4 &amp bug =
+
+Fixed a bug where fonts weren't being removed when &amp; is included.
+Thanks to Jan Jaap for reporting the bug (and the fix)
+
+= 0.2.3 PHP warning bug =
+
+Fixed a PHP warning bug.
 
 = 0.2.2 Bugfix for empty google font links =
 
